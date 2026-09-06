@@ -1,16 +1,623 @@
- STEI MEDIA
-│
-├── 🏠 ACCUEIL
-├── 🎵 MUSIQUES
-├── 🎬 CLIPS VIDÉO
-├── 🎤 ARTISTES
-├── 📀 NOUVEAUTÉS
-├── 🛒 COMMANDES
-│
-└── 🤖 STEI MEDIA ASSISTANT
-       │
-       ├── 💬 Facebook Messenger
-       ├── 📩 Répond aux clients
-       ├── 🛒 Reçoit les commandes
-       ├── 📋 Enregistre les demandes
-       └── 🔔 Informe l'administrateur
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>STEI-JANE MUSIC | Official</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#080808;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 7%;
+  background:rgba(8,8,8,.95);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  border-bottom:1px solid #222;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#ff8c00;
+  letter-spacing:2px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+
+nav ul a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav ul a:hover{
+  color:#ff8c00;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px 50px;
+  background:
+  radial-gradient(circle at top,#542500,#080808 60%);
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.hero small{
+  color:#ff8c00;
+  letter-spacing:4px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:70px;
+  margin:20px 0;
+  letter-spacing:5px;
+}
+
+.hero h1 span{
+  color:#ff8c00;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:19px;
+  max-width:650px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.buttons{
+  margin-top:35px;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 28px;
+  margin:8px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.primary{
+  background:#ff8c00;
+  color:black;
+}
+
+.secondary{
+  border:1px solid #ff8c00;
+  color:#ff8c00;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+}
+
+/* SECTIONS */
+
+section{
+  padding:90px 8%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.section-title span{
+  color:#ff8c00;
+}
+
+.section-text{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:50px;
+}
+
+/* MUSIC CARDS */
+
+.music-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.music-card{
+  background:#121212;
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #222;
+  transition:.3s;
+}
+
+.music-card:hover{
+  transform:translateY(-8px);
+  border-color:#ff8c00;
+}
+
+.cover{
+  height:220px;
+  border-radius:12px;
+  background:
+  linear-gradient(135deg,#ff8c00,#5b1900,#111);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  margin-bottom:18px;
+}
+
+.music-card h3{
+  margin-bottom:8px;
+}
+
+.music-card p{
+  color:#888;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+audio{
+  width:100%;
+}
+
+/* VIDEOS */
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.video-card{
+  background:#121212;
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid #222;
+}
+
+.video-placeholder{
+  height:200px;
+  background:linear-gradient(135deg,#222,#542500);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+}
+
+.video-card h3{
+  padding:20px;
+}
+
+/* ABOUT */
+
+.about{
+  background:#101010;
+}
+
+.about-box{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box p{
+  color:#aaa;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* FACEBOOK */
+
+.facebook{
+  text-align:center;
+  background:
+  radial-gradient(circle,#102c4b,#080808 65%);
+}
+
+.facebook-box{
+  max-width:600px;
+  margin:auto;
+  background:#111;
+  padding:45px 25px;
+  border-radius:20px;
+  border:1px solid #333;
+}
+
+.facebook-icon{
+  font-size:65px;
+  margin-bottom:15px;
+}
+
+.facebook-box p{
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+.facebook-btn{
+  background:#1877f2;
+  color:white;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+}
+
+.contact p{
+  color:#aaa;
+  margin:15px 0;
+}
+
+.social{
+  margin-top:25px;
+}
+
+.social a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  background:#151515;
+  border-radius:25px;
+  color:white;
+  text-decoration:none;
+  border:1px solid #333;
+}
+
+.social a:hover{
+  border-color:#ff8c00;
+  color:#ff8c00;
+}
+
+/* FOOTER */
+
+footer{
+  background:#050505;
+  padding:30px;
+  text-align:center;
+  color:#666;
+  border-top:1px solid #222;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  nav{
+    padding:15px 5%;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav ul{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav ul a{
+    font-size:12px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">🎵 STEI-JANE MUSIC</div>
+
+<ul>
+<li><a href="#home">Accueil</a></li>
+<li><a href="#music">Musique</a></li>
+<li><a href="#videos">Clips</a></li>
+<li><a href="#about">À propos</a></li>
+<li><a href="#facebook">Facebook</a></li>
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<small>AFRO • MUSIC • CULTURE • FUTURE</small>
+
+<h1>
+STEI-JANE<br>
+<span>MUSIC 🎧</span>
+</h1>
+
+<p>
+Bienvenue dans l'univers musical de STEI-JANE.
+Découvrez nos musiques, clips, mixtapes et toutes nos actualités.
+</p>
+
+<div class="buttons">
+
+<a href="#music" class="btn primary">
+🎧 ÉCOUTER MAINTENANT
+</a>
+
+<a href="#facebook" class="btn secondary">
+📘 SUIVRE SUR FACEBOOK
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section id="music">
+
+<h2 class="section-title">
+🎧 NOS <span>MUSIQUES</span>
+</h2>
+
+<p class="section-text">
+Découvrez les dernières sorties de STEI-JANE MUSIC.
+</p>
+
+<div class="music-grid">
+
+
+<div class="music-card">
+
+<div class="cover">🎵</div>
+
+<h3>STEI-JANE - Nouvel Hit</h3>
+
+<p>Disponible bientôt</p>
+
+<audio controls>
+<source src="music/song1.mp3" type="audio/mpeg">
+Votre navigateur ne supporte pas l'audio.
+</audio>
+
+</div>
+
+
+<div class="music-card">
+
+<div class="cover">🔥</div>
+
+<h3>Afro Future</h3>
+
+<p>STEI-JANE MUSIC</p>
+
+<audio controls>
+<source src="music/song2.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+<div class="music-card">
+
+<div class="cover">🌍</div>
+
+<h3>Madagascar Vibes</h3>
+
+<p>New Release</p>
+
+<audio controls>
+<source src="music/song3.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+<h2 class="section-title">
+🎬 NOS <span>CLIPS</span>
+</h2>
+
+<p class="section-text">
+Regardez nos dernières vidéos musicales.
+</p>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<div class="video-placeholder">
+▶️
+</div>
+
+<h3>STEI-JANE MUSIC VIDEO #1</h3>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-placeholder">
+🎬
+</div>
+
+<h3>AFRO FUTURISTIC CLIP</h3>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-placeholder">
+🔥
+</div>
+
+<h3>COMING SOON</h3>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="about-box">
+
+<h2 class="section-title">
+À PROPOS DE <span>STEI-JANE</span>
+</h2>
+
+<p>
+STEI-JANE MUSIC est un univers dédié à la musique,
+à la créativité et à la culture. Notre mission est de partager
+des sons uniques, des clips modernes et une vision musicale
+tournée vers le futur.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FACEBOOK -->
+
+<section class="facebook" id="facebook">
+
+<div class="facebook-box">
+
+<div class="facebook-icon">📘</div>
+
+<h2>RETROUVE-NOUS SUR FACEBOOK</h2>
+
+<p>
+Suivez notre page Facebook pour découvrir
+nos nouvelles musiques, vidéos et actualités.
+</p>
+
+<a
+href="https://www.facebook.com/profile.php?id=61594087353341"
+target="_blank"
+class="btn facebook-btn">
+
+📘 VISITER NOTRE PAGE FACEBOOK
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<h2 class="section-title">
+RESTONS <span>CONNECTÉS</span>
+</h2>
+
+<p>
+Suivez STEI-JANE MUSIC et ne manquez aucune nouveauté.
+</p>
+
+<div class="social">
+
+<a href="#facebook">📘 Facebook</a>
+
+<a href="#music">🎧 Musiques</a>
+
+<a href="#videos">🎬 Clips</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 STEI-JANE MUSIC 🎵
+</p>
+
+<p>
+AFRO • MUSIC • CULTURE • FUTURE
+</p>
+
+</footer>
+
+</body>
+</html>
