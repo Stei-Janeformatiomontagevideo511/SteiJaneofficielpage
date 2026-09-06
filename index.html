@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>STEI-JANE MUSIC | Official</title>
+<title>STEI-JANE MUSIC | Officiel</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
+
 *{
   margin:0;
   padding:0;
@@ -19,19 +24,23 @@ html{
 
 body{
   font-family:Arial, sans-serif;
-  background:#080808;
+  background:#050505;
   color:white;
   overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* =========================
+   MENU
+========================= */
 
 nav{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
-  padding:18px 7%;
-  background:rgba(8,8,8,.95);
+  background:rgba(5,5,5,0.95);
+  backdrop-filter:blur(10px);
+  padding:15px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -42,118 +51,109 @@ nav{
 .logo{
   font-size:22px;
   font-weight:bold;
-  color:#ff8c00;
-  letter-spacing:2px;
+  color:#ff9800;
 }
 
 nav ul{
-  display:flex;
   list-style:none;
+  display:flex;
   gap:20px;
 }
 
-nav ul a{
+nav a{
   color:white;
   text-decoration:none;
   font-size:14px;
 }
 
-nav ul a:hover{
-  color:#ff8c00;
+nav a:hover{
+  color:#ff9800;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:100vh;
+  padding:120px 8% 60px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 20px 50px;
   background:
-  radial-gradient(circle at top,#542500,#080808 60%);
+  linear-gradient(90deg,
+  rgba(0,0,0,.95),
+  rgba(0,0,0,.45)),
+  url("images/stei-jane.jpg");
+
+  background-size:cover;
+  background-position:center;
 }
 
 .hero-content{
-  max-width:900px;
+  max-width:650px;
 }
 
 .hero small{
-  color:#ff8c00;
+  color:#ff9800;
   letter-spacing:4px;
-  font-weight:bold;
 }
 
 .hero h1{
   font-size:70px;
   margin:20px 0;
-  letter-spacing:5px;
 }
 
 .hero h1 span{
-  color:#ff8c00;
+  color:#ff9800;
 }
 
 .hero p{
-  color:#bbb;
-  font-size:19px;
-  max-width:650px;
-  margin:auto;
+  color:#ccc;
+  font-size:18px;
   line-height:1.7;
-}
-
-.buttons{
-  margin-top:35px;
 }
 
 .btn{
   display:inline-block;
+  margin-top:25px;
   padding:15px 28px;
-  margin:8px;
+  background:#ff9800;
+  color:black;
   border-radius:30px;
   text-decoration:none;
   font-weight:bold;
   transition:.3s;
 }
 
-.primary{
-  background:#ff8c00;
-  color:black;
-}
-
-.secondary{
-  border:1px solid #ff8c00;
-  color:#ff8c00;
-}
-
 .btn:hover{
-  transform:scale(1.08);
+  transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTION
+========================= */
 
 section{
-  padding:90px 8%;
+  padding:80px 8%;
 }
 
 .section-title{
-  text-align:center;
-  font-size:38px;
-  margin-bottom:15px;
+  font-size:35px;
+  margin-bottom:10px;
 }
 
 .section-title span{
-  color:#ff8c00;
+  color:#ff9800;
 }
 
-.section-text{
-  text-align:center;
-  color:#aaa;
-  margin-bottom:50px;
+.section-description{
+  color:#888;
+  margin-bottom:35px;
 }
 
-/* MUSIC CARDS */
+/* =========================
+   MUSIC
+========================= */
 
 .music-grid{
   display:grid;
@@ -162,45 +162,42 @@ section{
 }
 
 .music-card{
-  background:#121212;
+  background:#111;
+  border:1px solid #252525;
   border-radius:15px;
-  padding:20px;
-  border:1px solid #222;
+  padding:15px;
   transition:.3s;
 }
 
 .music-card:hover{
   transform:translateY(-8px);
-  border-color:#ff8c00;
+  border-color:#ff9800;
 }
 
-.cover{
-  height:220px;
-  border-radius:12px;
-  background:
-  linear-gradient(135deg,#ff8c00,#5b1900,#111);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:70px;
-  margin-bottom:18px;
+.music-card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 .music-card h3{
-  margin-bottom:8px;
+  margin-top:15px;
 }
 
 .music-card p{
   color:#888;
-  font-size:14px;
-  margin-bottom:15px;
+  margin:8px 0;
 }
 
 audio{
   width:100%;
+  margin-top:10px;
 }
 
-/* VIDEOS */
+/* =========================
+   VIDEO
+========================= */
 
 .video-grid{
   display:grid;
@@ -209,68 +206,68 @@ audio{
 }
 
 .video-card{
-  background:#121212;
+  background:#111;
+  padding:15px;
   border-radius:15px;
-  overflow:hidden;
-  border:1px solid #222;
+  border:1px solid #252525;
 }
 
-.video-placeholder{
-  height:200px;
-  background:linear-gradient(135deg,#222,#542500);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:65px;
+video{
+  width:100%;
+  border-radius:10px;
 }
 
 .video-card h3{
-  padding:20px;
+  margin-top:15px;
 }
 
-/* ABOUT */
+/* =========================
+   GALERIE
+========================= */
 
-.about{
-  background:#101010;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
 }
 
-.about-box{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.3s;
 }
 
-.about-box p{
-  color:#aaa;
-  font-size:18px;
-  line-height:1.8;
+.gallery img:hover{
+  transform:scale(1.04);
 }
 
-/* FACEBOOK */
+/* =========================
+   FACEBOOK
+========================= */
 
 .facebook{
   text-align:center;
-  background:
-  radial-gradient(circle,#102c4b,#080808 65%);
+  background:linear-gradient(135deg,#071a35,#050505);
 }
 
 .facebook-box{
-  max-width:600px;
+  max-width:650px;
   margin:auto;
-  background:#111;
-  padding:45px 25px;
+  padding:40px;
+  background:#0d0d0d;
   border-radius:20px;
   border:1px solid #333;
 }
 
-.facebook-icon{
-  font-size:65px;
-  margin-bottom:15px;
+.facebook-box h2{
+  font-size:30px;
 }
 
 .facebook-box p{
   color:#aaa;
-  margin-bottom:25px;
+  margin:20px 0;
 }
 
 .facebook-btn{
@@ -278,249 +275,237 @@ audio{
   color:white;
 }
 
-/* CONTACT */
-
-.contact{
-  text-align:center;
-}
-
-.contact p{
-  color:#aaa;
-  margin:15px 0;
-}
-
-.social{
-  margin-top:25px;
-}
-
-.social a{
-  display:inline-block;
-  margin:8px;
-  padding:12px 20px;
-  background:#151515;
-  border-radius:25px;
-  color:white;
-  text-decoration:none;
-  border:1px solid #333;
-}
-
-.social a:hover{
-  border-color:#ff8c00;
-  color:#ff8c00;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  background:#050505;
-  padding:30px;
   text-align:center;
-  color:#666;
-  border-top:1px solid #222;
+  padding:30px;
+  background:#020202;
+  color:#777;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
-  nav{
-    padding:15px 5%;
-    flex-direction:column;
-    gap:12px;
-  }
-
-  nav ul{
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  nav ul a{
-    font-size:12px;
-  }
-
-  .hero h1{
-    font-size:43px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  section{
-    padding:70px 6%;
-  }
-
-  .section-title{
-    font-size:30px;
-  }
+nav{
+  flex-direction:column;
+  gap:12px;
 }
+
+nav ul{
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.hero{
+  padding:150px 7% 70px;
+}
+
+.hero h1{
+  font-size:45px;
+}
+
+section{
+  padding:60px 6%;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+MENU
+========================= -->
 
 <nav>
 
-<div class="logo">🎵 STEI-JANE MUSIC</div>
+<div class="logo">
+🎵 STEI-JANE MUSIC
+</div>
 
 <ul>
 <li><a href="#home">Accueil</a></li>
-<li><a href="#music">Musique</a></li>
+<li><a href="#music">Musiques</a></li>
 <li><a href="#videos">Clips</a></li>
-<li><a href="#about">À propos</a></li>
+<li><a href="#gallery">Galerie</a></li>
 <li><a href="#facebook">Facebook</a></li>
 </ul>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+ACCUEIL
+========================= -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
-<small>AFRO • MUSIC • CULTURE • FUTURE</small>
+<small>ARTISTE • MUSIC • CULTURE</small>
 
 <h1>
 STEI-JANE<br>
-<span>MUSIC 🎧</span>
+<span>MUSIC</span>
 </h1>
 
 <p>
-Bienvenue dans l'univers musical de STEI-JANE.
-Découvrez nos musiques, clips, mixtapes et toutes nos actualités.
+Bienvenue dans l'univers officiel de STEI-JANE.
+Découvrez mes musiques, mes clips, mes albums
+et toutes mes actualités.
 </p>
 
-<div class="buttons">
-
-<a href="#music" class="btn primary">
-🎧 ÉCOUTER MAINTENANT
+<a href="#music" class="btn">
+▶ ÉCOUTER MAINTENANT
 </a>
-
-<a href="#facebook" class="btn secondary">
-📘 SUIVRE SUR FACEBOOK
-</a>
-
-</div>
 
 </div>
 
 </section>
 
 
-<!-- MUSIC -->
+<!-- =========================
+MUSIQUES
+========================= -->
 
 <section id="music">
 
 <h2 class="section-title">
-🎧 NOS <span>MUSIQUES</span>
+🎧 MES <span>MUSIQUES</span>
 </h2>
 
-<p class="section-text">
-Découvrez les dernières sorties de STEI-JANE MUSIC.
+<p class="section-description">
+Écoutez les dernières sorties de STEI-JANE MUSIC.
 </p>
 
 <div class="music-grid">
 
 
+<!-- MUSIQUE 1 -->
+
 <div class="music-card">
 
-<div class="cover">🎵</div>
+<img src="images/cover1.jpg" alt="Cover musique">
 
-<h3>STEI-JANE - Nouvel Hit</h3>
+<h3>Nom de la Musique 1</h3>
 
-<p>Disponible bientôt</p>
+<p>STEI-JANE</p>
 
 <audio controls>
-<source src="music/song1.mp3" type="audio/mpeg">
+<source src="audio/song1.mp3" type="audio/mpeg">
 Votre navigateur ne supporte pas l'audio.
 </audio>
 
 </div>
 
 
+<!-- MUSIQUE 2 -->
+
 <div class="music-card">
 
-<div class="cover">🔥</div>
+<img src="images/cover2.jpg" alt="Cover musique">
 
-<h3>Afro Future</h3>
+<h3>Nom de la Musique 2</h3>
+
+<p>STEI-JANE</p>
+
+<audio controls>
+<source src="audio/song2.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+<!-- MUSIQUE 3 -->
+
+<div class="music-card">
+
+<img src="images/cover3.jpg" alt="Cover musique">
+
+<h3>Nouvelle Musique</h3>
 
 <p>STEI-JANE MUSIC</p>
 
 <audio controls>
-<source src="music/song2.mp3" type="audio/mpeg">
+<source src="audio/song3.mp3" type="audio/mpeg">
 </audio>
 
 </div>
-
-
-<div class="music-card">
-
-<div class="cover">🌍</div>
-
-<h3>Madagascar Vibes</h3>
-
-<p>New Release</p>
-
-<audio controls>
-<source src="music/song3.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- VIDEOS -->
+<!-- =========================
+VIDEOS
+========================= -->
 
 <section id="videos">
 
 <h2 class="section-title">
-🎬 NOS <span>CLIPS</span>
+🎬 MES <span>CLIPS</span>
 </h2>
 
-<p class="section-text">
-Regardez nos dernières vidéos musicales.
+<p class="section-description">
+Découvrez mes vidéos musicales.
 </p>
 
 <div class="video-grid">
 
-<div class="video-card">
 
-<div class="video-placeholder">
-▶️
-</div>
-
-<h3>STEI-JANE MUSIC VIDEO #1</h3>
-
-</div>
-
+<!-- VIDEO 1 -->
 
 <div class="video-card">
 
-<div class="video-placeholder">
-🎬
+<video controls poster="images/video-cover1.jpg">
+
+<source src="videos/video1.mp4" type="video/mp4">
+
+Votre navigateur ne supporte pas la vidéo.
+
+</video>
+
+<h3>STEI-JANE - Clip Officiel</h3>
+
 </div>
 
-<h3>AFRO FUTURISTIC CLIP</h3>
 
-</div>
-
+<!-- VIDEO 2 -->
 
 <div class="video-card">
 
-<div class="video-placeholder">
-🔥
+<video controls poster="images/video-cover2.jpg">
+
+<source src="videos/video2.mp4" type="video/mp4">
+
+</video>
+
+<h3>Nouveau Clip</h3>
+
 </div>
 
-<h3>COMING SOON</h3>
+
+<!-- VIDEO 3 -->
+
+<div class="video-card">
+
+<video controls poster="images/video-cover3.jpg">
+
+<source src="videos/video3.mp4" type="video/mp4">
+
+</video>
+
+<h3>STEI-JANE MUSIC VIDEO</h3>
 
 </div>
 
@@ -529,41 +514,54 @@ Regardez nos dernières vidéos musicales.
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+GALERIE
+========================= -->
 
-<section class="about" id="about">
-
-<div class="about-box">
+<section id="gallery">
 
 <h2 class="section-title">
-À PROPOS DE <span>STEI-JANE</span>
+📸 MA <span>GALERIE</span>
 </h2>
 
-<p>
-STEI-JANE MUSIC est un univers dédié à la musique,
-à la créativité et à la culture. Notre mission est de partager
-des sons uniques, des clips modernes et une vision musicale
-tournée vers le futur.
+<p class="section-description">
+Photos, studio, concerts et moments de STEI-JANE.
 </p>
+
+<div class="gallery">
+
+<img src="images/photo1.jpg" alt="STEI-JANE">
+
+<img src="images/photo2.jpg" alt="STEI-JANE">
+
+<img src="images/photo3.jpg" alt="STEI-JANE">
+
+<img src="images/photo4.jpg" alt="STEI-JANE">
+
+<img src="images/photo5.jpg" alt="STEI-JANE">
+
+<img src="images/photo6.jpg" alt="STEI-JANE">
 
 </div>
 
 </section>
 
 
-<!-- FACEBOOK -->
+<!-- =========================
+FACEBOOK
+========================= -->
 
 <section class="facebook" id="facebook">
 
 <div class="facebook-box">
 
-<div class="facebook-icon">📘</div>
-
-<h2>RETROUVE-NOUS SUR FACEBOOK</h2>
+<h2>
+📘 STEI JANE Officiel
+</h2>
 
 <p>
-Suivez notre page Facebook pour découvrir
-nos nouvelles musiques, vidéos et actualités.
+Suivez ma page Facebook officielle pour découvrir
+les nouvelles musiques, vidéos et actualités.
 </p>
 
 <a
@@ -571,7 +569,7 @@ href="https://www.facebook.com/profile.php?id=61594087353341"
 target="_blank"
 class="btn facebook-btn">
 
-📘 VISITER NOTRE PAGE FACEBOOK
+📘 VISITER LA PAGE FACEBOOK
 
 </a>
 
@@ -580,41 +578,14 @@ class="btn facebook-btn">
 </section>
 
 
-<!-- CONTACT -->
-
-<section class="contact">
-
-<h2 class="section-title">
-RESTONS <span>CONNECTÉS</span>
-</h2>
-
-<p>
-Suivez STEI-JANE MUSIC et ne manquez aucune nouveauté.
-</p>
-
-<div class="social">
-
-<a href="#facebook">📘 Facebook</a>
-
-<a href="#music">🎧 Musiques</a>
-
-<a href="#videos">🎬 Clips</a>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
 <p>
-© 2026 STEI-JANE MUSIC 🎵
-</p>
-
-<p>
-AFRO • MUSIC • CULTURE • FUTURE
+© 2026 STEI-JANE MUSIC — Tous droits réservés.
 </p>
 
 </footer>
